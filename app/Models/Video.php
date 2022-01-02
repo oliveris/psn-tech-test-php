@@ -11,9 +11,11 @@ use Illuminate\Support\Carbon;
  * Class Video
  *
  * @package App\Models
- * @property int         $id
- * @property string      $title
- * @property Carbon|null $date
+ * @property int               $id
+ * @property string            $title
+ * @property Carbon|null       $date
+ *
+ * @property-read Channel|null $channel
  *
  * @mixin Eloquent
  */

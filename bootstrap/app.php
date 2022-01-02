@@ -28,6 +28,7 @@ $app->withFacades();
 $app->withEloquent();
 
 $app->configure('database');
+$app->configure('video');
 
 /*
 |--------------------------------------------------------------------------
@@ -93,6 +94,7 @@ $app->configure('app');
 |
 */
 
+$app->register(\App\Providers\VideoManagerServiceProvider::class);
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);

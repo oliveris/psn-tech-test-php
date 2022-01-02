@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  *
  * @package App\Models
  * @property int         $id
- * @property string      $name
+ * @property string      $channel_name
  *
  * @mixin Eloquent
  */

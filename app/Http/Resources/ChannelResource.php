@@ -2,17 +2,17 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Video;
+use App\Models\Channel;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
- * Class VideoResource
+ * Class ChannelResource
  *
  * @package App\Http\Resources
- * @mixin Video
+ * @mixin Channel
  */
-final class VideoResource extends JsonResource
+final class ChannelResource extends JsonResource
 {
     /**
      * @param Request $request
@@ -22,10 +22,8 @@ final class VideoResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id'    => $this->id,
-            'title' => $this->title,
-            'date'  => $this->date,
-            'channel' => $this->whenLoaded(new ChannelResource($this->channel))
+            'id'           => $this->id,
+            'channel_name' => $this->channel_name
         ];
     }
 }

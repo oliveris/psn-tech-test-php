@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Barryvdh\LaravelIdeHelper\Eloquent;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 
 
@@ -47,8 +48,8 @@ final class Video extends Model
      *
      * @var array
      */
-    public array $eagerLoadable = [
-        'channel'
+    public array $filterable = [
+        'title' => 'title'
     ];
 
     /**
@@ -59,5 +60,18 @@ final class Video extends Model
     public function channel(): BelongsTo
     {
         return $this->belongsTo(Channel::class);
+    }
+
+    /**
+     * Scopes the query for the title
+     *
+     * @param Builder $query
+     * @param string  $title
+     *
+     * @return Builder
+     */
+    public function scopeTitle(Builder $query, string $title): Builder
+    {
+        return $query->where('title', 'LIKE', '%' . $title . '%');
     }
 }

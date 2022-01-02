@@ -4,6 +4,7 @@ namespace App\Services\Videos\Providers;
 
 use App\Exceptions\FiltersCannotBeEmpty;
 use App\Exceptions\ProviderChannelCannotBeEmpty;
+use Illuminate\Support\Collection;
 
 /**
  * Class Provider
@@ -57,7 +58,7 @@ abstract class Provider
     /**
      * Abstract function to obtain the videos
      *
-     * @return array
+     * @return Collection
      */
-    abstract function getVideos(): array;
+    abstract function getVideos(): Collection;
 }

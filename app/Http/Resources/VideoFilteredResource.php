@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
- * Class VideoResource
+ * Class VideoFilteredResource
  *
  * @package App\Http\Resources
  * @mixin Video
  */
-final class VideoResource extends JsonResource
+final class VideoFilteredResource extends JsonResource
 {
     /**
      * @param Request $request
@@ -23,8 +23,7 @@ final class VideoResource extends JsonResource
     {
         return [
             'id'    => $this->id,
-            'title' => $this->title,
-            'date'  => $this->date
+            'title' => $this->title
         ];
     }
 }

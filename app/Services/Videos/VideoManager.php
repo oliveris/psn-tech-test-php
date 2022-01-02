@@ -2,6 +2,8 @@
 
 namespace App\Services\Videos;
 
+use Illuminate\Support\Collection;
+
 /**
  * Interface VideoManager
  */
@@ -14,7 +16,7 @@ interface VideoManager
      * @param string $channel
      * @param array $filter
      *
-     * @return array
+     * @return Collection
      */
-    public static function getChannelVideos(string $provider, string $channel, array $filter = []): array;
+    public static function getChannelVideos(string $provider, string $channel, array $filter = []): Collection;
 }

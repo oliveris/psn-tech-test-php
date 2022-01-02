@@ -3,6 +3,7 @@
 namespace App\Services\Videos;
 
 use App\Exceptions\VideoProviderNotFoundException;
+use Illuminate\Support\Collection;
 
 /**
  * Class VideoManagerService
@@ -17,9 +18,9 @@ final class VideoManagerService implements VideoManager
      * @param array  $filter
      *
      * @throws VideoProviderNotFoundException
-     * @return array
+     * @return Collection
      */
-    public static function getChannelVideos(string $provider, string $channel, array $filter = []): array
+    public static function getChannelVideos(string $provider, string $channel, array $filter = []): Collection
     {
         // Check the video provider is configured
         if (!array_key_exists($provider, config('video'))) {

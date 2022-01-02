@@ -3,7 +3,9 @@
 namespace App\Models;
 
 use Barryvdh\LaravelIdeHelper\Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model as BaseModel;
+use Illuminate\Http\Request;
 
 /**
  * Class Model
@@ -14,25 +16,36 @@ use Illuminate\Database\Eloquent\Model as BaseModel;
  */
 class Model extends BaseModel
 {
-    /**
-     * Eager load all missing relationships including those specified in the request
-     *
-     * @return mixed
-     */
-    public function eagerLoad()
-    {
-        $request = request();
+    /** @var array */
+    protected array $filterable = [];
 
-        // If the request includes additional relationships, add them to the model
-        if ($request->exists('with')) {
-            foreach ($request->with as $with) {
-                if (array_key_exists($with, $this->eagerLoadable ?? []) && $this->eagerLoadable[$with]) {
-                    $this->with[] = $this->eagerLoadable[$with];
-                }
+    /**
+     * Applies a filter to the query builder
+     *
+     * @param Builder $builder
+     * @param Request $request
+     *
+     * @return Builder
+     */
+    public function scopeFilterResult(Builder $builder, Request $request): Builder
+    {
+        // Obtain the filters from the request
+        $filters = $request->all();
+
+        // Iterate through the query filters to check they are valid then filter the result
+        foreach ($filters as $filterKey => $filterValue) {
+            // if the query filter is not in array continue
+            if (!array_key_exists($filterKey, $this->filterable)) {
+                continue;
             }
-            $this->loadMissing($this->with);
+
+            // Obtain the filter method name
+            $method = $this->filterable[$filterKey];
+
+            // Filter the entity for the passed value
+            $builder = $this->$method($filterValue);
         }
 
-        return $this;
+        return $builder;
     }
 }

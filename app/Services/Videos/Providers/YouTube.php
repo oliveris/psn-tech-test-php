@@ -6,6 +6,7 @@ use App\Exceptions\NoChannelFound;
 use App\Exceptions\ProviderChannelCannotBeEmpty;
 use Google\Client;
 use Google\Service\YouTube as YouTubeService;
+use Illuminate\Support\Collection;
 
 /**
  * Class YouTube
@@ -32,12 +33,12 @@ final class YouTube extends Provider
      *
      * @throws ProviderChannelCannotBeEmpty
      * @throws NoChannelFound
-     * @return array
+     * @return Collection
      */
-    public function getVideos(): array
+    public function getVideos(): Collection
     {
         // Define an empty array to store the found videos
-        $videos = [];
+        $videos = collect();
 
         // Set the query params
         $queryParams = [
@@ -55,7 +56,7 @@ final class YouTube extends Provider
             $response = $this->service->search->listSearch('snippet', $queryParams);
 
             // Push the found items into the array
-            $videos = array_merge($videos, $response->items);
+            $videos = $videos->merge($response->items);
         }
 
         return $videos;

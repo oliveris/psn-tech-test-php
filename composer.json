@@ -43,6 +43,8 @@
     "scripts": {
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ]
+        ],
+        "test-dox": "./vendor/phpunit/phpunit/phpunit --testdox --exclude-group ignore,broken",
+        "test": "PHPUNIT_SPEEDTRAP=\"enabled\" vendor/phpunit/phpunit/phpunit --exclude-group ignore,broken"
     }
 }

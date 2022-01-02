@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "85116463-d386-494d-b0c7-04e38385fd1d",
+		"name": "psn-tech-test-php",
+		"description": "HAR To Postman Generated Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Task 1a: Creates Videos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/videos",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"videos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201 Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/videos",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"videos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "796"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"31c-rMWS8NKZ2cQY+GKXQd3dYxetfbk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Dec 2021 15:08:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"title\": \"Proflex 957 1997 Retro Mountain Bike | Pro Bike\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"_id\": \"61cc96712bb6df02b761d19b\",\n            \"channel\": \"61cc96712bb6df02b761d198\",\n            \"__v\": 0\n        },\n        {\n            \"title\": \"Proflex 957 1997 Retro Mountain Bike | Pro Bike\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"_id\": \"61cc96712bb6df02b761d19c\",\n            \"channel\": \"61cc96712bb6df02b761d198\",\n            \"__v\": 0\n        },\n        {\n            \"title\": \"Test Title\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"_id\": \"61cc96712bb6df02b761d19d\",\n            \"channel\": \"61cc96712bb6df02b761d199\",\n            \"__v\": 0\n        },\n        {\n            \"title\": \"Proflex 957 1997 Retro Mountain Bike | Pro Bike\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"_id\": \"61cc96712bb6df02b761d19e\",\n            \"channel\": \"61cc96712bb6df02b761d198\",\n            \"__v\": 0\n        },\n        {\n            \"title\": \"Test Title\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"_id\": \"61cc96712bb6df02b761d19f\",\n            \"channel\": \"61cc96712bb6df02b761d199\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Task 1b: Gets a list of all videos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/api/videos",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"videos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/api/videos",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"videos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1447"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5a7-LdWTB+Qk+diTImidO9b3F88cqgY\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Dec 2021 16:27:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"_id\": \"61cc75825198e6fdce956d92\",\n            \"title\": \"Proflex 957 1997 Retro Mountain Bike | Pro Bike\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"channel\": \"61cc75825198e6fdce956d8f\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61cc75825198e6fdce956d93\",\n            \"title\": \"Proflex 957 1997 Retro Mountain Bike | Pro Bike\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"channel\": \"61cc75825198e6fdce956d8f\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61cc75825198e6fdce956d94\",\n            \"title\": \"Test Title\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"channel\": \"61cc75825198e6fdce956d90\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61cc75825198e6fdce956d95\",\n            \"title\": \"Proflex 957 1997 Retro Mountain Bike | Pro Bike\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"channel\": \"61cc75825198e6fdce956d8f\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61cc75825198e6fdce956d96\",\n            \"title\": \"Test Title\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"channel\": \"61cc75825198e6fdce956d90\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61cc79ed8c31d4febe4e4b07\",\n            \"title\": \"Proflex 957 1997 Retro Mountain Bike | Pro Bike\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"channel\": \"61cc79ed8c31d4febe4e4b04\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61cc79ed8c31d4febe4e4b08\",\n            \"title\": \"Proflex 957 1997 Retro Mountain Bike | Pro Bike\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"channel\": \"61cc79ed8c31d4febe4e4b04\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61cc79ed8c31d4febe4e4b09\",\n            \"title\": \"Test Title\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"channel\": \"61cc79ed8c31d4febe4e4b05\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61cc79ed8c31d4febe4e4b0a\",\n            \"title\": \"Proflex 957 1997 Retro Mountain Bike | Pro Bike\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"channel\": \"61cc79ed8c31d4febe4e4b04\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61cc96712bb6df02b761d19b\",\n            \"title\": \"Proflex 957 1997 Retro Mountain Bike | Pro Bike\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"channel\": \"61cc96712bb6df02b761d198\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61cc96712bb6df02b761d19c\",\n            \"title\": \"Proflex 957 1997 Retro Mountain Bike | Pro Bike\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"channel\": \"61cc96712bb6df02b761d198\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61cc96712bb6df02b761d19d\",\n            \"title\": \"Test Title\",\n            \"date\": \"2016-04-09T17:00:01.000Z\",\n            \"channel\": \"61cc96712bb6df02b761d199\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Task 2: Gets a video",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/api/videos/:video",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"videos",
+						":video"
+					],
+					"variable": [
+						{
+							"key": "video",
+							"value": "1",
+							"description": "ID of the video"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/api/videos/:video",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"videos",
+								":video"
+							],
+							"variable": [
+								{
+									"key": "video",
+									"value": "61cc96712bb6df02b761d19f",
+									"description": "ID of the video"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-p+rc9UQh1zcLfO+PPkv037P+WZs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Dec 2021 16:27:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"_id\": \"61cc75825198e6fdce956d92\",\n        \"title\": \"Proflex 957 1997 Retro Mountain Bike | Pro Bike\",\n        \"date\": \"2016-04-09T17:00:01.000Z\",\n        \"channel\": \"61cc75825198e6fdce956d8f\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Task 3: Deletes a Video",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/api/videos/:video",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"videos",
+						":video"
+					],
+					"variable": [
+						{
+							"key": "video",
+							"value": "1",
+							"description": "ID of the video"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "204 No Content",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/api/videos/:video",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"videos",
+								":video"
+							],
+							"variable": [
+								{
+									"key": "video",
+									"value": "61cc96712bb6df02b761d19f",
+									"description": "ID of the video"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-p+rc9UQh1zcLfO+PPkv037P+WZs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Dec 2021 16:27:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Task 4: Gets a filtered list of videos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/api/filter-videos?title=How Fast",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"filter-videos"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "How Fast"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/api/videos?title=Test Title",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"videos"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Test Title"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1447"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5a7-LdWTB+Qk+diTImidO9b3F88cqgY\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Dec 2021 16:27:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"_id\": \"61cc75825198e6fdce956d94\",\n            \"title\": \"Test Title\"\n        },\n        {\n            \"_id\": \"61cc75825198e6fdce956d96\",\n            \"title\": \"Test Title\"\n        },\n        {\n            \"_id\": \"61cc79ed8c31d4febe4e4b09\",\n            \"title\": \"Test Title\"\n        },\n        {\n            \"_id\": \"61cc96712bb6df02b761d19d\",\n            \"title\": \"Test Title\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL1",
+			"value": "http://localhost:8000",
+			"type": "any"
+		}
+	]
+}

@@ -58,8 +58,11 @@ final class VideoController extends Controller
     }
 
     /**
+     * Stores the Videos obtained from YouTube
+     * 
      * @throws VideoProviderNotFoundException
      * @throws FailedToCreateVideos
+     * @return JsonResponse
      */
     public function store(): JsonResponse
     {
